@@ -10,3 +10,11 @@ jobs:
         uses: mattwyskiel/sst-node-pnpm-setup@v1
       - run: pnpm i
         shell: bash
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-region: us-east-2
+          role-to-assume: arn:aws:iam::662292074719:role/whiskey-app-role
+          role-session-name: sst-pnpm-workflows-sample
+      - run: aws s3 ls
+        shell: bash
