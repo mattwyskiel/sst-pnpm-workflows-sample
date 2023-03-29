@@ -20,5 +20,5 @@ jobs:
           aws-region: us-east-2
           role-to-assume: arn:aws:iam::662292074719:role/whiskey-app-role
           role-session-name: sst-pnpm-workflows-sample
-      - run: aws s3 ls
+      - run: sst deploy --stage prod
         shell: bash
