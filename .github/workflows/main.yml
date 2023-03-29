@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    name: Publishes this SST stack
+    steps:
+      - uses: actions/checkout@v3
+      - id: pnpm-install
+        uses: mattwyskiel/sst-node-pnpm-setup@v1
+      - run: pnpm -v
+        shell: bash
